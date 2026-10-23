@@ -49,9 +49,18 @@ namespace Prueba01
             if (!string.IsNullOrWhiteSpace(nombreBuscado))
             {
                 bool encontrado = false;
+                foreach (string participante in participantes)
+                {
+                    if (participante.Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase))
+                    {
+                        encontrado = true;
+                        break;
+                    }
+                }
+                // Busca el nombre en la lista de participantes y muestra su estado de asistencia
                 for (int i = 0; i < participantes.Length; i++)
                 {
-                    if (participantes[i].Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase))
+                    if (participantes[i].Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase)) 
                     {
                         encontrado = true;
                         string estado = asistencia[i] ? "Asistió" : "Faltó";

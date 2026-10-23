@@ -4,12 +4,14 @@ namespace Prueba01
     {
         public void Ejecutar()
         {
+            //aquí inicia la ejecución del programa de la estación de servicio
             Console.WriteLine("==Estación de servicio LA RACHA==");
 
             Console.WriteLine("Ingrese el tipo de combustible que desea echarle (1 = Regular, 2 = Premium, 3 =Diesel): ");
             int tipoCombustible = int.Parse(Console.ReadLine() ?? string.Empty);
             tipoCombustible = (tipoCombustible >= 1 && tipoCombustible <= 3) ? tipoCombustible : throw new ArgumentException("Tipo de combustible no válido");
-
+            
+            //valida que el tipo de combustible ingresado sea correcto
             Console.WriteLine("Ingrese la cantidad de litros que desea echarle (60 litros máximo): ");
             double cantidadLitros = double.Parse(Console.ReadLine() ?? string.Empty);
             cantidadLitros = (cantidadLitros > 0 && cantidadLitros <= 60) ? cantidadLitros : throw new ArgumentException("Cantidad de litros no válida");
@@ -63,6 +65,7 @@ namespace Prueba01
             double totalConDescuento = subtotal - descuento;
             Console.WriteLine($"Descuento: {descuento:C}");
             Console.WriteLine($"Total con descuento: {totalConDescuento:C}");
+            
             //mostrar total litros, subtotal y total con descuento
             Console.WriteLine($"Total litros: {cantidadLitros}");
             Console.WriteLine($"Subtotal: {subtotal:C}");
